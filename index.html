@@ -2,14 +2,130 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Meine Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handwerksbetrieb</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    section {
+      padding: 3rem 1.5rem;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Willkommen digga!</h1>
-  <p>Das ist meine erste Website.</p>
+  <!-- Navigation -->
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#home">
+        <strong>Mein Handwerk</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
-  <script src="script.js"></script>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#about">Über uns</a>
+        <a class="navbar-item" href="#services">Leistungen</a>
+        <a class="navbar-item" href="#contact">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="has-background-light">
+    <div class="container has-text-centered">
+      <h1 class="title is-2">Willkommen bei [Betriebsname]</h1>
+      <p class="subtitle is-4">Handwerk mit Leidenschaft und Qualität</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="title is-3">Über uns</h2>
+      <p>Wir sind ein kleiner Handwerksbetrieb, spezialisiert auf [Dein Fachgebiet]. Qualität und Kundenzufriedenheit stehen bei uns an erster Stelle.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="has-background-light">
+    <div class="container">
+      <h2 class="title is-3">Unsere Leistungen</h2>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-4">Leistung 1</h3>
+            <p>Beschreibung der Leistung 1</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-4">Leistung 2</h3>
+            <p>Beschreibung der Leistung 2</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-4">Leistung 3</h3>
+            <p>Beschreibung der Leistung 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="title is-3">Kontakt</h2>
+      <form>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Dein Name">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">E-Mail</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="Deine E-Mail">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Nachricht</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Deine Nachricht"></textarea>
+          </div>
+        </div>
+        <div class="control">
+          <button class="button is-primary">Absenden</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer has-background-primary has-text-white">
+    <div class="content has-text-centered">
+      <p>© 2025 [Betriebsname]. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <!-- Navbar Burger Script -->
+  <script>
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.querySelector('#navbarMenu');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
+    });
+  </script>
 </body>
 </html>
