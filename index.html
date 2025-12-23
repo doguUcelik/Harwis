@@ -2,26 +2,141 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Handwerksbetrieb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harwis Dienstleistungsservice</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <style>
+    /* =============================
+       Farben & Variablen
+    ============================ */
+    :root {
+      --primary-color: #013220;     /* Dunkelgrün */
+      --accent-color: #B0FF4D;      /* Limettengrün */
+      --hover-color: #00C851;       /* Helleres Grün */
+      --text-color-light: #ffffff;  /* Weißer Text */
+    }
+
+    /* =============================
+       Body & Grundlayout
+    ============================ */
     body {
       font-family: 'Roboto', sans-serif;
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
+      margin: 0;
     }
+
     section {
-      padding: 3rem 1.5rem;
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
+      padding: 4rem 1.5rem;
+    }
+
+    /* =============================
+       Navbar
+    ============================ */
+    .navbar {
+      background-color: var(--primary-color);
+    }
+
+    .navbar-item, .navbar-burger span {
+      color: var(--text-color-light);
+      transition: color 0.3s ease;
+    }
+
+    .navbar-item:hover {
+      color: var(--hover-color);
+    }
+
+    /* =============================
+       Überschriften & Text
+    ============================ */
+    h1, h2, h3, h4, h5, h6,
+    p, label, .subtitle {
+      color: var(--text-color-light) !important;
+    }
+
+    /* =============================
+       Boxen (Leistungen)
+    ============================ */
+    .box {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background-color: var(--hover-color);
+      color: var(--text-color-light);
+    }
+
+    /* =============================
+       Buttons
+    ============================ */
+    .button.is-primary {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      border: 2px solid var(--accent-color);
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .button.is-primary:hover {
+      background-color: var(--hover-color);
+      color: var(--text-color-light);
+      transform: translateY(-2px);
+    }
+
+    /* =============================
+       Footer
+    ============================ */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    /* =============================
+       Formulare
+    ============================ */
+    input.input, textarea.textarea {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      border: 1px solid var(--accent-color);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input.input::placeholder, textarea.textarea::placeholder {
+      color: rgba(1,50,32,0.5);
+    }
+
+    input.input:focus, textarea.textarea:focus {
+      border-color: var(--hover-color);
+      box-shadow: 0 0 0 0.2rem rgba(0,200,81,0.25);
+    }
+
+    /* =============================
+       Links
+    ============================ */
+    a {
+      color: var(--text-color-light);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--hover-color);
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#home">
-        <strong>Harwis Dienstleistungsservice</strong>
-      </a>
+      <a class="navbar-item" href="#home"><strong>Harwis Dienstleistungsservice</strong></a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -39,7 +154,7 @@
   </nav>
 
   <!-- Home Section -->
-  <section id="home" class="has-background-light">
+  <section id="home">
     <div class="container has-text-centered">
       <h1 class="title is-2">Harwis Dienstleistungsservice</h1>
       <p class="subtitle is-4">Handwerk mit Leidenschaft und Qualität</p>
@@ -50,12 +165,12 @@
   <section id="about">
     <div class="container">
       <h2 class="title is-3">Über uns</h2>
-      <p>Hausmeisterservice- Treppenhausreinigung, Garten- + Grünpflege & Winterdienst & Entrümpelung</p>
+      <p>Hausmeisterservice, Treppenhausreinigung, Garten- & Grünpflege, Winterdienst & Entrümpelung</p>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="has-background-light">
+  <section id="services">
     <div class="container">
       <h2 class="title is-3">Unsere Leistungen</h2>
       <div class="columns">
@@ -112,10 +227,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer has-background-primary has-text-white">
-    <div class="content has-text-centered">
-      <p>© 2025 [Betriebsname]. Alle Rechte vorbehalten.</p>
-    </div>
+  <footer>
+    <p>© 2025 Harwis Dienstleistungsservice. Alle Rechte vorbehalten.</p>
   </footer>
 
   <!-- Navbar Burger Script -->
@@ -127,5 +240,6 @@
       menu.classList.toggle('is-active');
     });
   </script>
+
 </body>
 </html>

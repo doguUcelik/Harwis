@@ -1,0 +1,127 @@
+/* =============================
+   Farben & Variablen
+============================= */
+:root {
+  --primary-color: #013220;     /* Dunkelgrün Basis */
+  --accent-color: #016144;      /* Mittleres Grün für Boxen & Buttons */
+  --hover-color: #01a85b;       /* Helleres Grün für Hover Effekte */
+  --text-color-light: #ffffff;  /* Weißer Text */
+}
+
+/* =============================
+   Body & Grundlayout
+============================= */
+body {
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s ease;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  margin: 0;
+}
+
+/* =============================
+   Navbar
+============================= */
+.navbar.is-primary {
+  background-color: var(--primary-color);
+  transition: background 0.3s ease;
+}
+
+.navbar-item, .navbar-burger span {
+  color: var(--text-color-light);
+}
+
+.navbar-item:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color-light);
+}
+
+/* =============================
+   Sections
+============================= */
+section {
+  padding: 4rem 1.5rem;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+/* =============================
+   Titel & Überschriften
+============================= */
+h1, h2, h3 {
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+/* =============================
+   Boxen (Leistungen)
+============================= */
+.box {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  background-color: var(--hover-color);
+}
+
+/* =============================
+   Buttons
+============================= */
+.button.is-primary {
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  border: 2px solid var(--accent-color);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.button.is-primary:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color-light);
+  transform: translateY(-2px);
+}
+
+/* =============================
+   Footer
+============================= */
+.footer.has-background-primary {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  transition: background 0.3s ease;
+}
+
+/* =============================
+   Formulare
+============================= */
+input.input, textarea.textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
+  border: 1px solid var(--accent-color);
+}
+
+input.input::placeholder, textarea.textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+input.input:focus, textarea.textarea:focus {
+  border-color: var(--hover-color);
+  box-shadow: 0 0 0 0.2rem rgba(1,168,91,0.25);
+}
+
+/* =============================
+   Links
+============================= */
+a {
+  color: var(--text-color-light);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--hover-color);
+  text-decoration: none;
+}
