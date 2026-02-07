@@ -4,242 +4,165 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harwis Dienstleistungsservice</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <style>
-    /* =============================
-       Farben & Variablen
-    ============================ */
-    :root {
-      --primary-color: #013220;     /* Dunkelgrün */
-      --accent-color: #B0FF4D;      /* Limettengrün */
-      --hover-color: #00C851;       /* Helleres Grün */
-      --text-color-light: #ffffff;  /* Weißer Text */
-    }
+  <link rel="stylesheet" href="style.css"> <!-- dein neues CSS -->
 
-    /* =============================
-       Body & Grundlayout
-    ============================ */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--primary-color);
-      color: var(--text-color-light);
-      margin: 0;
-    }
-
-    section {
-      background-color: var(--primary-color);
-      color: var(--text-color-light);
-      padding: 4rem 1.5rem;
-    }
-
-    /* =============================
-       Navbar
-    ============================ */
-    .navbar {
-      background-color: var(--primary-color);
-    }
-
-    .navbar-item, .navbar-burger span {
-      color: var(--text-color-light);
-      transition: color 0.3s ease;
-    }
-
-    .navbar-item:hover {
-      color: var(--hover-color);
-    }
-
-    /* =============================
-       Überschriften & Text
-    ============================ */
-    h1, h2, h3, h4, h5, h6,
-    p, label, .subtitle {
-      color: var(--text-color-light) !important;
-    }
-
-    /* =============================
-       Boxen (Leistungen)
-    ============================ */
-    .box {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      background-color: var(--hover-color);
-      color: var(--text-color-light);
-    }
-
-    /* =============================
-       Buttons
-    ============================ */
-    .button.is-primary {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      border: 2px solid var(--accent-color);
-      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    }
-
-    .button.is-primary:hover {
-      background-color: var(--hover-color);
-      color: var(--text-color-light);
-      transform: translateY(-2px);
-    }
-
-    /* =============================
-       Footer
-    ============================ */
-    footer {
-      background-color: var(--primary-color);
-      color: var(--text-color-light);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    /* =============================
-       Formulare
-    ============================ */
-    input.input, textarea.textarea {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      border: 1px solid var(--accent-color);
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    input.input::placeholder, textarea.textarea::placeholder {
-      color: rgba(1,50,32,0.5);
-    }
-
-    input.input:focus, textarea.textarea:focus {
-      border-color: var(--hover-color);
-      box-shadow: 0 0 0 0.2rem rgba(0,200,81,0.25);
-    }
-
-    /* =============================
-       Links
-    ============================ */
-    a {
-      color: var(--text-color-light);
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--hover-color);
-      text-decoration: none;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#home"><strong>Harwis Dienstleistungsservice</strong></a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+<!-- Navbar -->
+<nav class="navbar" role="navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-weight-bold" href="#home">
+      Harwis Dienstleistungsservice
+    </a>
 
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="#about">Über uns</a>
-        <a class="navbar-item" href="#services">Leistungen</a>
-        <a class="navbar-item" href="#contact">Kontakt</a>
+    <a class="navbar-burger" data-target="navbarMenu">
+      <span></span><span></span><span></span>
+    </a>
+  </div>
+
+  <div id="navbarMenu" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="#about">Über uns</a>
+      <a class="navbar-item" href="#services">Leistungen</a>
+      <a class="navbar-item" href="#contact">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home">
+  <div class="container has-text-centered">
+    <h1 class="title is-1">Zuverlässiger Dienstleistungsservice</h1>
+    <p class="subtitle is-4">
+      Hausmeisterservice • Reinigung • Gartenpflege • Winterdienst
+    </p>
+
+    <a href="#contact" class="button is-primary is-large">
+      Jetzt Angebot anfragen
+    </a>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <h2 class="title is-3">Über Harwis</h2>
+        <p>
+          Wir sind Ihr zuverlässiger Partner für professionelle Dienstleistungen
+          rund um Haus, Garten und Gebäude. Sauberkeit, Qualität und Zuverlässigkeit
+          stehen bei uns an erster Stelle.
+        </p>
+      </div>
+
+      <div class="column is-6">
+        <ul>
+          <li>✔ Hausmeisterservice</li>
+          <li>✔ Treppenhausreinigung</li>
+          <li>✔ Garten- & Grünpflege</li>
+          <li>✔ Winterdienst</li>
+          <li>✔ Entrümpelung</li>
+        </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="container has-text-centered">
-      <h1 class="title is-2">Harwis Dienstleistungsservice</h1>
-      <p class="subtitle is-4">Handwerk mit Leidenschaft und Qualität</p>
-    </div>
-  </section>
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Unsere Leistungen</h2>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="title is-3">Über uns</h2>
-      <p>Hausmeisterservice, Treppenhausreinigung, Garten- & Grünpflege, Winterdienst & Entrümpelung</p>
-    </div>
-  </section>
+    <div class="columns is-multiline">
 
-  <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2 class="title is-3">Unsere Leistungen</h2>
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <h3 class="title is-4">Leistung 1</h3>
-            <p>Beschreibung der Leistung 1</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="box">
-            <h3 class="title is-4">Leistung 2</h3>
-            <p>Beschreibung der Leistung 2</p>
-          </div>
-        </div>
-        <div class="column">
-          <div class="box">
-            <h3 class="title is-4">Leistung 3</h3>
-            <p>Beschreibung der Leistung 3</p>
-          </div>
+      <div class="column is-4">
+        <div class="box">
+          <h3 class="title is-5">Hausmeisterservice</h3>
+          <p>Regelmäßige Betreuung und Instandhaltung Ihrer Immobilie.</p>
         </div>
       </div>
+
+      <div class="column is-4">
+        <div class="box">
+          <h3 class="title is-5">Reinigung</h3>
+          <p>Treppenhäuser, Büros und Objekte gründlich und zuverlässig gereinigt.</p>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="box">
+          <h3 class="title is-5">Gartenpflege</h3>
+          <p>Pflege von Grünflächen, Hecken, Rasen und Außenanlagen.</p>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="box">
+          <h3 class="title is-5">Winterdienst</h3>
+          <p>Schnee räumen & Streudienst für sichere Wege.</p>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="box">
+          <h3 class="title is-5">Entrümpelung</h3>
+          <p>Schnell, sauber und fachgerecht.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="title is-3">Kontakt</h2>
-      <form>
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Dein Name">
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">Kontakt aufnehmen</h2>
+
+    <div class="columns is-centered">
+      <div class="column is-6">
+
+        <form>
+          <div class="field">
+            <input class="input" type="text" placeholder="Name">
           </div>
-        </div>
-        <div class="field">
-          <label class="label">E-Mail</label>
-          <div class="control">
-            <input class="input" type="email" placeholder="Deine E-Mail">
+
+          <div class="field">
+            <input class="input" type="email" placeholder="E-Mail">
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Nachricht</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Deine Nachricht"></textarea>
+
+          <div class="field">
+            <textarea class="textarea" placeholder="Nachricht"></textarea>
           </div>
-        </div>
-        <div class="control">
-          <button class="button is-primary">Absenden</button>
-        </div>
-      </form>
+
+          <button class="button is-primary is-fullwidth">
+            Anfrage senden
+          </button>
+        </form>
+
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Harwis Dienstleistungsservice. Alle Rechte vorbehalten.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>© 2025 Harwis Dienstleistungsservice</p>
+</footer>
 
-  <!-- Navbar Burger Script -->
-  <script>
-    const burger = document.querySelector('.navbar-burger');
-    const menu = document.querySelector('#navbarMenu');
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('is-active');
-      menu.classList.toggle('is-active');
-    });
-  </script>
+<script>
+const burger = document.querySelector('.navbar-burger');
+const menu = document.querySelector('#navbarMenu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('is-active');
+  menu.classList.toggle('is-active');
+});
+</script>
 
 </body>
 </html>

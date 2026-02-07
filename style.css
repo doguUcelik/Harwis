@@ -1,127 +1,138 @@
 /* =============================
-   Farben & Variablen
+   Farb-System
 ============================= */
 :root {
-  --primary-color: #013220;     /* Dunkelgrün Basis */
-  --accent-color: #016144;      /* Mittleres Grün für Boxen & Buttons */
-  --hover-color: #01a85b;       /* Helleres Grün für Hover Effekte */
-  --text-color-light: #ffffff;  /* Weißer Text */
+  --bg-main: #f4f6f9;
+  --bg-white: #ffffff;
+
+  --gray-dark: #323232;
+  --gray-medium: #5f6368;
+  --gray-light: #e5e7eb;
+
+  --accent: #2f7cf6;
+  --accent-hover: #1f63d1;
 }
 
 /* =============================
-   Body & Grundlayout
+   Body
 ============================= */
 body {
   font-family: 'Roboto', sans-serif;
-  transition: background 0.3s ease;
-  background-color: var(--primary-color);
-  color: var(--text-color-light);
+  background: var(--bg-main);
+  color: var(--gray-dark);
   margin: 0;
 }
 
 /* =============================
    Navbar
 ============================= */
-.navbar.is-primary {
-  background-color: var(--primary-color);
-  transition: background 0.3s ease;
+.navbar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--gray-light);
 }
 
-.navbar-item, .navbar-burger span {
-  color: var(--text-color-light);
+.navbar-item {
+  color: var(--gray-dark);
+  font-weight: 500;
 }
 
 .navbar-item:hover {
-  background-color: var(--hover-color);
-  color: var(--text-color-light);
+  color: var(--accent);
 }
 
 /* =============================
    Sections
 ============================= */
 section {
-  padding: 4rem 1.5rem;
-  transition: all 0.5s ease;
-  background-color: var(--primary-color);
-  color: var(--text-color-light);
+  background: var(--bg-white);
+  padding: 5rem 1.5rem;
+}
+
+section:nth-of-type(even) {
+  background: #f1f3f6;
 }
 
 /* =============================
-   Titel & Überschriften
+   Typografie
 ============================= */
-h1, h2, h3 {
-  color: var(--text-color-light);
-  transition: color 0.3s ease;
+h1, h2, h3, h4 {
+  color: var(--gray-dark);
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--gray-medium);
+}
+
+p, li {
+  color: var(--gray-medium);
 }
 
 /* =============================
-   Boxen (Leistungen)
+   Cards
 ============================= */
 .box {
-  background-color: var(--accent-color);
-  color: var(--text-color-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  background: var(--bg-white);
+  border-radius: 16px;
+  border: 1px solid var(--gray-light);
+  padding: 2rem;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  background-color: var(--hover-color);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,.12);
 }
 
 /* =============================
    Buttons
 ============================= */
 .button.is-primary {
-  background-color: var(--accent-color);
-  color: var(--text-color-light);
-  border: 2px solid var(--accent-color);
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
 }
 
 .button.is-primary:hover {
-  background-color: var(--hover-color);
-  color: var(--text-color-light);
-  transform: translateY(-2px);
+  background: var(--accent-hover);
+}
+
+/* =============================
+   Forms
+============================= */
+input.input,
+textarea.textarea {
+  border-radius: 8px;
+  border: 1px solid var(--gray-light);
+  color: var(--gray-dark);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47,124,246,.2);
 }
 
 /* =============================
    Footer
 ============================= */
-.footer.has-background-primary {
-  background-color: var(--primary-color);
-  color: var(--text-color-light);
-  transition: background 0.3s ease;
-}
-
-/* =============================
-   Formulare
-============================= */
-input.input, textarea.textarea {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--accent-color);
-  color: var(--text-color-light);
-  border: 1px solid var(--accent-color);
-}
-
-input.input::placeholder, textarea.textarea::placeholder {
-  color: rgba(255,255,255,0.7);
-}
-
-input.input:focus, textarea.textarea:focus {
-  border-color: var(--hover-color);
-  box-shadow: 0 0 0 0.2rem rgba(1,168,91,0.25);
+footer {
+  background: #1f1f1f;
+  color: #cfcfcf;
+  padding: 2.5rem;
+  text-align: center;
 }
 
 /* =============================
    Links
 ============================= */
 a {
-  color: var(--text-color-light);
-  transition: color 0.3s ease;
+  color: var(--accent);
 }
 
 a:hover {
-  color: var(--hover-color);
+  color: var(--accent-hover);
   text-decoration: none;
 }
