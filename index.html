@@ -1,167 +1,264 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harwis Dienstleistungsservice</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harwis Dienstleistungsservice</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="style.css"> <!-- dein neues CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
+<style>
+:root{
+  --dark:#323232;
+  --light:#f2f2f2;
+  --accent:#5f7f73;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+  background:#2f2f2f;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.navbar-item{
+  color:white;
+}
+.navbar-item:hover{
+  color:#b5e3d8;
+}
+
+/* HERO */
+.hero-section{
+  background:url("https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600") center/cover;
+  padding:7rem 1rem;
+  color:white;
+}
+.hero-section h1{
+  color:white;
+}
+
+/* SECTIONS */
+section{
+  padding:5rem 1.5rem;
+}
+
+.light{
+  background:#f2f2f2;
+}
+.dark{
+  background:#323232;
+  color:white;
+}
+
+/* SERVICES */
+.service-img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+.box{
+  padding:0;
+}
+.service-content{
+  padding:1.5rem;
+}
+
+/* TESTIMONIAL */
+.testimonial-section{
+  background:#ededed;
+  text-align:center;
+}
+.testimonial-text{
+  font-size:1.5rem;
+  max-width:900px;
+  margin:auto;
+}
+
+/* CONTACT */
+.contact-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.contact-info{
+  padding:3rem;
+}
+
+/* FOOTER */
+footer{
+  background:#2f2f2f;
+  color:white;
+  text-align:center;
+  padding:2rem;
+}
+
+/* ANIMATIONS */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+.modal-box{
+  background:white;
+  padding:3rem;
+  max-width:700px;
+  width:90%;
+}
+</style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar" role="navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item has-text-weight-bold" href="#home">
-      Harwis Dienstleistungsservice
-    </a>
-
-    <a class="navbar-burger" data-target="navbarMenu">
-      <span></span><span></span><span></span>
-    </a>
-  </div>
-
-  <div id="navbarMenu" class="navbar-menu">
-    <div class="navbar-end">
-      <a class="navbar-item" href="#about">Über uns</a>
-      <a class="navbar-item" href="#services">Leistungen</a>
-      <a class="navbar-item" href="#contact">Kontakt</a>
-    </div>
-  </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+<div class="navbar-menu is-active">
+<div class="navbar-start">
+<a class="navbar-item has-text-weight-bold" href="#home">HARWIS DIENSTLEISTUNGSSERVICE</a>
+</div>
+<div class="navbar-end">
+<a class="navbar-item" href="#home">Home</a>
+<a class="navbar-item" onclick="openModal('aboutModal')">Über Harwis</a>
+<a class="navbar-item" href="#services">Unsere Leistungen</a>
+<a class="navbar-item" href="#testimonial">Kundenstimmen</a>
+<a class="navbar-item" href="#contact">Kontakt</a>
+</div>
+</div>
 </nav>
 
-<!-- Hero -->
-<section id="home">
-  <div class="container has-text-centered">
-    <h1 class="title is-1">Zuverlässiger Dienstleistungsservice</h1>
-    <p class="subtitle is-4">
-      Hausmeisterservice • Reinigung • Gartenpflege • Winterdienst
-    </p>
-
-    <a href="#contact" class="button is-primary is-large">
-      Jetzt Angebot anfragen
-    </a>
-  </div>
+<!-- HERO -->
+<section id="home" class="hero-section reveal">
+<div class="container has-text-centered">
+<h1 class="title is-1">Ihr Partner für Qualität & Service</h1>
+<p class="subtitle is-4">Harwis Dienstleistungsservice</p>
+<a href="#services" class="button is-light">Mehr erfahren</a>
+</div>
 </section>
 
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <div class="columns is-vcentered">
-      <div class="column is-6">
-        <h2 class="title is-3">Über Harwis</h2>
-        <p>
-          Wir sind Ihr zuverlässiger Partner für professionelle Dienstleistungen
-          rund um Haus, Garten und Gebäude. Sauberkeit, Qualität und Zuverlässigkeit
-          stehen bei uns an erster Stelle.
-        </p>
-      </div>
+<!-- SERVICES -->
+<section id="services" class="light reveal">
+<div class="container">
+<h2 class="title is-3 has-text-centered">Unsere Dienstleistungen</h2>
 
-      <div class="column is-6">
-        <ul>
-          <li>✔ Hausmeisterservice</li>
-          <li>✔ Treppenhausreinigung</li>
-          <li>✔ Garten- & Grünpflege</li>
-          <li>✔ Winterdienst</li>
-          <li>✔ Entrümpelung</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="columns is-multiline">
+
+<div class="column is-6">
+<div class="box">
+<img class="service-img" src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=900">
+<div class="service-content">
+<h3 class="title is-4">Winterdienst</h3>
+<p>Sichere Wege bei Schnee & Eis.</p>
+<button class="button is-dark" onclick="openModal('winterModal')">Mehr erfahren</button>
+</div>
+</div>
+</div>
+
+<div class="column is-6">
+<div class="box">
+<img class="service-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900">
+<div class="service-content">
+<h3 class="title is-4">Gartenpflege</h3>
+<p>Gepflegte Außenanlagen.</p>
+<button class="button is-dark" onclick="openModal('gardenModal')">Mehr erfahren</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- Services -->
-<section id="services">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Unsere Leistungen</h2>
-
-    <div class="columns is-multiline">
-
-      <div class="column is-4">
-        <div class="box">
-          <h3 class="title is-5">Hausmeisterservice</h3>
-          <p>Regelmäßige Betreuung und Instandhaltung Ihrer Immobilie.</p>
-        </div>
-      </div>
-
-      <div class="column is-4">
-        <div class="box">
-          <h3 class="title is-5">Reinigung</h3>
-          <p>Treppenhäuser, Büros und Objekte gründlich und zuverlässig gereinigt.</p>
-        </div>
-      </div>
-
-      <div class="column is-4">
-        <div class="box">
-          <h3 class="title is-5">Gartenpflege</h3>
-          <p>Pflege von Grünflächen, Hecken, Rasen und Außenanlagen.</p>
-        </div>
-      </div>
-
-      <div class="column is-4">
-        <div class="box">
-          <h3 class="title is-5">Winterdienst</h3>
-          <p>Schnee räumen & Streudienst für sichere Wege.</p>
-        </div>
-      </div>
-
-      <div class="column is-4">
-        <div class="box">
-          <h3 class="title is-5">Entrümpelung</h3>
-          <p>Schnell, sauber und fachgerecht.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<!-- TESTIMONIAL -->
+<section id="testimonial" class="testimonial-section reveal">
+<p class="testimonial-text">
+„Harwis Dienstleistungsservice hat uns mit seiner hervorragenden Qualität restlos überzeugt.“
+</p>
+<small>Ein zufriedener Kunde aus Echzell</small>
 </section>
 
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">Kontakt aufnehmen</h2>
-
-    <div class="columns is-centered">
-      <div class="column is-6">
-
-        <form>
-          <div class="field">
-            <input class="input" type="text" placeholder="Name">
-          </div>
-
-          <div class="field">
-            <input class="input" type="email" placeholder="E-Mail">
-          </div>
-
-          <div class="field">
-            <textarea class="textarea" placeholder="Nachricht"></textarea>
-          </div>
-
-          <button class="button is-primary is-fullwidth">
-            Anfrage senden
-          </button>
-        </form>
-
-      </div>
-    </div>
-  </div>
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+<div class="columns is-gapless">
+<div class="column is-6">
+<img class="contact-img" src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200">
+</div>
+<div class="column is-6 contact-info">
+<h2 class="title is-3">Kontaktieren Sie uns</h2>
+<p>61206 Echzell</p>
+<p>Mo–Fr: 9–17 Uhr | Sa: 10–15 Uhr</p>
+<p>Telefon: 01234 567890</p>
+<p>E-Mail: info@harwis.de</p>
+</div>
+</div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <p>© 2025 Harwis Dienstleistungsservice</p>
+© 2026 Harwis Dienstleistungsservice
 </footer>
 
-<script>
-const burger = document.querySelector('.navbar-burger');
-const menu = document.querySelector('#navbarMenu');
+<!-- MODALS -->
+<div id="aboutModal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-box">
+<h2 class="title is-3">Über Harwis</h2>
+<p>Zuverlässige Dienstleistungen rund um Ihre Immobilie.</p>
+</div>
+</div>
 
-burger.addEventListener('click', () => {
-  burger.classList.toggle('is-active');
-  menu.classList.toggle('is-active');
+<div id="winterModal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-box">
+<h2 class="title is-3">Winterdienst</h2>
+<p>Professioneller Schneeräum- und Streudienst.</p>
+</div>
+</div>
+
+<div id="gardenModal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-box">
+<h2 class="title is-3">Gartenpflege</h2>
+<p>Pflege, Schnitt & Gestaltung Ihrer Grünflächen.</p>
+</div>
+</div>
+
+<script>
+function openModal(id){
+  document.getElementById(id).style.display="flex";
+}
+function closeModal(e){
+  if(e.target.classList.contains("modal-overlay")){
+    e.target.style.display="none";
+  }
+}
+
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("active");
+    }
+  })
 });
+window.dispatchEvent(new Event("scroll"));
 </script>
 
 </body>
