@@ -8,124 +8,127 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
 <style>
+html { scroll-behavior: smooth; }
+
 :root{
-  --dark:#323232;
-  --light:#f2f2f2;
-  --accent:#5f7f73;
+--dark:#232323;
+--light:#f4f4f4;
+--accent:#00c851;
 }
 
-html{scroll-behavior:smooth;}
-
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
+background:#f4f4f4;
+color:#232323;
+font-family:Arial, sans-serif;
 }
 
 /* NAVBAR */
 .navbar{
-  background:#2f2f2f;
-  position:sticky;
-  top:0;
-  z-index:1000;
+position:sticky;
+top:0;
+z-index:1000;
+background:#232323;
 }
 .navbar-item{
-  color:white;
+color:white;
 }
 .navbar-item:hover{
-  color:#b5e3d8;
+color:var(--accent);
 }
 
 /* HERO */
 .hero-section{
-  background:url("https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600") center/cover;
-  padding:7rem 1rem;
-  color:white;
-}
-.hero-section h1{
-  color:white;
+padding:7rem 1.5rem;
+background:#232323;
+color:white;
 }
 
-/* SECTIONS */
-section{
-  padding:5rem 1.5rem;
+/* REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:.8s ease;
 }
-
-.light{
-  background:#f2f2f2;
-}
-.dark{
-  background:#323232;
-  color:white;
+.reveal.active{
+opacity:1;
+transform:none;
 }
 
 /* SERVICES */
-.service-img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-}
 .box{
-  padding:0;
+overflow:hidden;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
+
+.service-img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
 .service-content{
-  padding:1.5rem;
+padding:1.5rem;
+}
+
+.button.is-primary{
+background:var(--accent);
+border:none;
 }
 
 /* TESTIMONIAL */
 .testimonial-section{
-  background:#ededed;
-  text-align:center;
-}
-.testimonial-text{
-  font-size:1.5rem;
-  max-width:900px;
-  margin:auto;
+background:#232323;
+color:white;
+padding:5rem 1.5rem;
 }
 
 /* CONTACT */
-.contact-img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.contact-section{
+background:white;
 }
+
+.contact-img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 .contact-info{
-  padding:3rem;
+padding:3rem;
 }
 
 /* FOOTER */
 footer{
-  background:#2f2f2f;
-  color:white;
-  text-align:center;
-  padding:2rem;
+background:#232323;
+color:white;
+text-align:center;
+padding:2rem;
 }
 
-/* ANIMATIONS */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:.8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* MODAL */
+/* MODALS */
 .modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:3000;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:2000;
 }
+
 .modal-box{
-  background:white;
-  padding:3rem;
-  max-width:700px;
-  width:90%;
+background:white;
+padding:3rem;
+max-width:700px;
+width:90%;
+border-radius:8px;
+animation:fadeUp .4s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -134,83 +137,106 @@ footer{
 
 <!-- NAVBAR -->
 <nav class="navbar">
-<div class="navbar-menu is-active">
-<div class="navbar-start">
-<a class="navbar-item has-text-weight-bold" href="#home">HARWIS DIENSTLEISTUNGSSERVICE</a>
-</div>
-<div class="navbar-end">
-<a class="navbar-item" href="#home">Home</a>
-<a class="navbar-item" onclick="openModal('aboutModal')">Über Harwis</a>
-<a class="navbar-item" href="#services">Unsere Leistungen</a>
-<a class="navbar-item" href="#testimonial">Kundenstimmen</a>
-<a class="navbar-item" href="#contact">Kontakt</a>
-</div>
-</div>
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-weight-bold" href="#home">
+      HARWIS DIENSTLEISTUNGSSERVICE
+    </a>
+  </div>
+
+  <div class="navbar-menu is-active">
+    <div class="navbar-end">
+      <a class="navbar-item" href="#home">Home</a>
+      <a class="navbar-item" onclick="openModal('aboutModal')">Über Harwis</a>
+      <a class="navbar-item" href="#services">Leistungen</a>
+      <a class="navbar-item" href="#contact">Kontakt</a>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="hero-section reveal">
-<div class="container has-text-centered">
-<h1 class="title is-1">Ihr Partner für Qualität & Service</h1>
-<p class="subtitle is-4">Harwis Dienstleistungsservice</p>
-<a href="#services" class="button is-light">Mehr erfahren</a>
-</div>
+<section id="home" class="hero-section reveal active">
+  <div class="container has-text-centered">
+    <h1 class="title is-1 has-text-white">Zuverlässig. Sauber. Professionell.</h1>
+    <p class="subtitle is-4 has-text-white">Harwis Dienstleistungsservice</p>
+    <a href="#services" class="button is-primary">Unsere Leistungen</a>
+  </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="light reveal">
+<section id="services" class="reveal">
 <div class="container">
 <h2 class="title is-3 has-text-centered">Unsere Dienstleistungen</h2>
 
 <div class="columns is-multiline">
 
+<!-- Winterdienst -->
 <div class="column is-6">
 <div class="box">
-<img class="service-img" src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=900">
+<img class="service-img" src="https://images.unsplash.com/photo-1600679472829-3044539ce8ed?auto=format&fit=crop&w=1000">
 <div class="service-content">
 <h3 class="title is-4">Winterdienst</h3>
-<p>Sichere Wege bei Schnee & Eis.</p>
-<button class="button is-dark" onclick="openModal('winterModal')">Mehr erfahren</button>
+<p>Sicher durch Schnee & Eis.</p>
+<button class="button is-primary" onclick="openModal('winterModal')">Mehr erfahren</button>
 </div>
 </div>
 </div>
 
+<!-- Gartenpflege -->
 <div class="column is-6">
 <div class="box">
-<img class="service-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900">
+<img class="service-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000">
 <div class="service-content">
 <h3 class="title is-4">Gartenpflege</h3>
-<p>Gepflegte Außenanlagen.</p>
-<button class="button is-dark" onclick="openModal('gardenModal')">Mehr erfahren</button>
+<p>Perfekt gepflegte Außenanlagen.</p>
+<button class="button is-primary" onclick="openModal('gardenModal')">Mehr erfahren</button>
+</div>
+</div>
+</div>
+
+<!-- Treppenhaus -->
+<div class="column is-6">
+<div class="box">
+<img class="service-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000">
+<div class="service-content">
+<h3 class="title is-4">Treppenhausreinigung</h3>
+<p>Sauberkeit für Ihr Gebäude.</p>
+<button class="button is-primary" onclick="openModal('stairsModal')">Mehr erfahren</button>
+</div>
+</div>
+</div>
+
+<!-- Entrümpelung -->
+<div class="column is-6">
+<div class="box">
+<img class="service-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000">
+<div class="service-content">
+<h3 class="title is-4">Entrümpelung & mehr</h3>
+<p>Schnell & professionell.</p>
+<button class="button is-primary" onclick="openModal('cleanModal')">Mehr erfahren</button>
 </div>
 </div>
 </div>
 
 </div>
 </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section id="testimonial" class="testimonial-section reveal">
-<p class="testimonial-text">
-„Harwis Dienstleistungsservice hat uns mit seiner hervorragenden Qualität restlos überzeugt.“
-</p>
-<small>Ein zufriedener Kunde aus Echzell</small>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="reveal">
+<section id="contact" class="contact-section reveal">
 <div class="columns is-gapless">
+
 <div class="column is-6">
-<img class="contact-img" src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200">
+<img class="contact-img" src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200">
 </div>
+
 <div class="column is-6 contact-info">
-<h2 class="title is-3">Kontaktieren Sie uns</h2>
+<h2 class="title is-3">Kontakt</h2>
 <p>61206 Echzell</p>
-<p>Mo–Fr: 9–17 Uhr | Sa: 10–15 Uhr</p>
-<p>Telefon: 01234 567890</p>
-<p>E-Mail: info@harwis.de</p>
+<p>Mo–Fr 9–17 Uhr</p>
+<p><strong>Tel:</strong> 01234 567890</p>
+<p><strong>E-Mail:</strong> info@harwis.de</p>
 </div>
+
 </div>
 </section>
 
@@ -222,43 +248,66 @@ footer{
 <div id="aboutModal" class="modal-overlay" onclick="closeModal(event)">
 <div class="modal-box">
 <h2 class="title is-3">Über Harwis</h2>
-<p>Zuverlässige Dienstleistungen rund um Ihre Immobilie.</p>
+<p>Ihr zuverlässiger Partner für Hausservice, Pflege & Reinigung.</p>
 </div>
 </div>
 
 <div id="winterModal" class="modal-overlay" onclick="closeModal(event)">
 <div class="modal-box">
-<h2 class="title is-3">Winterdienst</h2>
-<p>Professioneller Schneeräum- und Streudienst.</p>
+<h3 class="title is-4">Winterdienst</h3>
+<p>Räumen, Streuen und Sicherheit bei jedem Wetter.</p>
 </div>
 </div>
 
 <div id="gardenModal" class="modal-overlay" onclick="closeModal(event)">
 <div class="modal-box">
-<h2 class="title is-3">Gartenpflege</h2>
-<p>Pflege, Schnitt & Gestaltung Ihrer Grünflächen.</p>
+<h3 class="title is-4">Gartenpflege</h3>
+<p>Rasen, Hecken, Pflege und Gestaltung.</p>
+</div>
+</div>
+
+<div id="stairsModal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-box">
+<h3 class="title is-4">Treppenhausreinigung</h3>
+<p>Regelmäßige und gründliche Reinigung.</p>
+</div>
+</div>
+
+<div id="cleanModal" class="modal-overlay" onclick="closeModal(event)">
+<div class="modal-box">
+<h3 class="title is-4">Entrümpelung</h3>
+<p>Wohnungen, Keller, Garagen – stressfrei.</p>
 </div>
 </div>
 
 <script>
 function openModal(id){
-  document.getElementById(id).style.display="flex";
+document.getElementById(id).style.display="flex";
 }
+
 function closeModal(e){
-  if(e.target.classList.contains("modal-overlay")){
-    e.target.style.display="none";
-  }
+if(e.target.classList.contains("modal-overlay")){
+e.target.style.display="none";
 }
+}
+
+window.addEventListener("load", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight){
+      el.classList.add("active");
+    }
+  });
+});
+
 
 const reveals=document.querySelectorAll(".reveal");
 window.addEventListener("scroll",()=>{
-  reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight-80){
-      el.classList.add("active");
-    }
-  })
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-80){
+el.classList.add("active");
+}
 });
-window.dispatchEvent(new Event("scroll"));
+});
 </script>
 
 </body>
