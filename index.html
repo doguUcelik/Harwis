@@ -1,724 +1,275 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harwis Dienstleistungsservice</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-:root {
-  --dark: #4a4a4a;
-  --darker: #3a3a3a;
-  --light: #f5f5f5;
-  --white: #ffffff;
-  --text: #666666;
-  --accent: #5a6c6f;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text);
-  line-height: 1.7;
-  background: var(--white);
-}
-
-/* NAVIGATION */
-.navbar {
-  background: var(--dark);
-  padding: 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.nav-brand {
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-decoration: none;
-  padding: 1.2rem 0;
-}
-
-.nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 0;
-}
-
-.nav-link {
-  color: #b0b0b0;
-  text-decoration: none;
-  padding: 1.2rem 1.5rem;
-  display: block;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  font-weight: 400;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--white);
-  background: rgba(255,255,255,0.05);
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-/* HERO SECTION */
-.hero {
-  position: relative;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--darker);
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.4;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: var(--white);
-  max-width: 900px;
-  padding: 2rem;
-}
-
-.hero-title {
-  font-family: 'Lora', serif;
-  font-size: 2.8rem;
-  font-weight: 400;
-  line-height: 1.3;
-  margin-bottom: 1.5rem;
-}
-
-.hero-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.9);
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.9rem 2.5rem;
-  background: var(--accent);
-  color: var(--white);
-  text-decoration: none;
-  border-radius: 3px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.btn:hover {
-  background: var(--darker);
-  transform: translateY(-2px);
-}
-
-/* SERVICES SECTION */
-.services {
-  padding: 5rem 2rem;
-  background: var(--light);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-family: 'Lora', serif;
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 3.5rem;
-  color: var(--darker);
-  font-weight: 400;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-}
-
-.service-card {
-  background: var(--white);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-  transform: translateY(-5px);
-}
-
-.service-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-}
-
-.service-content {
-  padding: 2rem;
-}
-
-.service-title {
-  font-family: 'Lora', serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--darker);
-  font-weight: 600;
-}
-
-.service-text {
-  color: var(--text);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.btn-secondary {
-  background: var(--accent);
-  color: var(--white);
-  padding: 0.75rem 1.8rem;
-  font-size: 0.9rem;
-}
-
-/* TESTIMONIAL */
-.testimonial {
-  padding: 5rem 2rem;
-  background: var(--light);
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-family: 'Lora', serif;
-  font-size: 1.8rem;
-  line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-  color: var(--darker);
-  font-weight: 400;
-  font-style: italic;
-}
-
-.testimonial-author {
-  font-size: 1rem;
-  color: var(--text);
-  font-weight: 400;
-}
-
-/* CONTACT SECTION */
-.contact {
-  background: var(--white);
-}
-
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.contact-image {
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  object-fit: cover;
-}
-
-.contact-info {
-  padding: 4rem 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--white);
-}
-
-.contact-title {
-  font-family: 'Lora', serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--darker);
-  font-weight: 600;
-}
-
-.contact-details {
-  margin-bottom: 2rem;
-}
-
-.contact-item {
-  margin-bottom: 1.5rem;
-}
-
-.contact-label {
-  font-size: 0.85rem;
-  color: var(--darker);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  display: block;
-  margin-bottom: 0.3rem;
-}
-
-.contact-value {
-  font-size: 1rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.contact-value a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.contact-value a:hover {
-  text-decoration: underline;
-}
-
-.social-label {
-  font-size: 0.85rem;
-  color: var(--darker);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* FOOTER */
-.footer {
-  background: var(--darker);
-  color: rgba(255,255,255,0.7);
-  padding: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: var(--white);
-}
-
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background-color: var(--white);
-  padding: 3rem;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-  border-radius: 2px;
-}
-
-.modal-close {
-  position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  font-size: 2rem;
-  color: var(--text);
-  cursor: pointer;
-  border: none;
-  background: none;
-  line-height: 1;
-}
-
-.modal-close:hover {
-  color: var(--darker);
-}
-
-.modal-title {
-  font-family: 'Lora', serif;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--darker);
-}
-
-.modal-text {
-  color: var(--text);
-  line-height: 1.8;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .services-grid {
-    gap: 2rem;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Harwis Dienstleistungsservice - Ihr Partner für Hausmeisterdienste in Echzell">
+  <title>Harwis Dienstleistungsservice</title>
   
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-  }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   
-  .contact-image {
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 60px;
-    flex-direction: column;
-    background-color: var(--dark);
-    width: 100%;
-    text-align: left;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.3);
-    gap: 0;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-link {
-    padding: 1rem 2rem;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .hero {
-    height: 500px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .service-image {
-    height: 250px;
-  }
-
-  .testimonial-quote {
-    font-size: 1.4rem;
-  }
-
-  .contact-info {
-    padding: 3rem 2rem;
-  }
-
-  .modal-content {
-    padding: 2rem;
-  }
-}
-</style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="#home" class="nav-brand">HARWIS DIENSTLEISTUNGSSERVICE</a>
-    
-    <button class="nav-toggle" id="navToggle">
-      ☰
-    </button>
-    
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#home" class="nav-link active">HOME</a></li>
-      <li><a href="#services" class="nav-link">UNSERE LEISTUNGEN</a></li>
-      <li><a href="#about" class="nav-link">ÜBER HARWIS</a></li>
-      <li><a href="#testimonial" class="nav-link">KUNDENSTIMMEN</a></li>
-      <li><a href="#gallery" class="nav-link">PROJEKTGALERIE</a></li>
-      <li><a href="#contact" class="nav-link">WINTERDIENST</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600" alt="Hausmeisterservice" class="hero-bg">
-  <div class="hero-content">
-    <h1 class="hero-title">Ihr partner für qualität und service – Harwis Dienstleistungsservice</h1>
-    <p class="hero-text">Willkommen bei Harwis Dienstleistungsservice in Echzell! Wir sind Ihr erfahrener Partner für umfassende Hausmeisterdienste. Qualität, Kundenfreundlichkeit und zuverlässige Lösungen stehen bei uns an erster Stelle, damit Sie sich rundum wohlfühlen können. Entdecken Sie, wie wir Ihnen den Alltag erleichtern.</p>
-    <a href="#services" class="btn">Los geht's!</a>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="services">
-  <div class="container">
-    <h2 class="section-title">Unsere umfassenden dienstleistungen für sie</h2>
-    <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text);">
-      Von der Gartenpflege im Sommer bis zum Winterdienst bei Schnee – wir bieten maßgeschneiderte Lösungen, die genau auf Ihre Bedürfnisse abgestimmt sind. Effektiv, praktisch und stets mit dem Fokus auf Ihre Zufriedenheit.
-    </p>
-
-    <div class="services-grid">
+  <!-- ===================================
+       NAVIGATION
+       =================================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">HARWIS DIENSTLEISTUNGSSERVICE</a>
       
-      <!-- Winterdienst -->
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1547530586-f6c0780b6372?auto=format&fit=crop&w=800" alt="Winterdienst" class="service-image">
-        <div class="service-content">
-          <h3 class="service-title">Winterdienst</h3>
-          <p class="service-text">In den kalten Monaten sorgen wir zuverlässig für schneefreie Wege und sichere Zufahrten. Verlassen Sie sich auf unseren schnellen und gründlichen Winterdienst.</p>
-          <button class="btn btn-secondary" onclick="openModal('winterModal')">Mehr erfahren</button>
-        </div>
-      </div>
-
-      <!-- Gartenpflege -->
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800" alt="Gartenpflege" class="service-image">
-        <div class="service-content">
-          <h3 class="service-title">Gartenpflege</h3>
-          <p class="service-text">Ob Rasenmähen, Hecken schneiden oder allgemeine Gartenarbeit – wir halten Ihre Grünflächen das ganze Jahr über in Schuss. Genießen Sie Ihren perfekten Garten.</p>
-          <button class="btn btn-secondary" onclick="openModal('gardenModal')">Mehr erfahren</button>
-        </div>
-      </div>
-
-      <!-- Treppenhausreinigung -->
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800" alt="Treppenhausreinigung" class="service-image">
-        <div class="service-content">
-          <h3 class="service-title">Treppenhausreinigung</h3>
-          <p class="service-text">Ein sauberes Treppenhaus hinterlässt einen bleibenden ersten Eindruck. Wir kümmern uns um die regelmäßige und gründliche Reinigung Ihres Eingangsbereichs.</p>
-          <button class="btn btn-secondary" onclick="openModal('stairsModal')">Mehr erfahren</button>
-        </div>
-      </div>
-
-      <!-- Entrümpelung -->
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" alt="Entrümpelung" class="service-image">
-        <div class="service-content">
-          <h3 class="service-title">Entrümpelungen & mehr</h3>
-          <p class="service-text">Von der Entrümpelung bis zu sonstigen Arbeiten – wir sind flexibel und packen an, wo immer Hilfe benötigt wird. Sprechen Sie uns einfach an für eine individuelle Lösung.</p>
-          <button class="btn btn-secondary" onclick="openModal('cleanModal')">Mehr erfahren</button>
-        </div>
-      </div>
-
+      <button class="nav-toggle" id="navToggle" aria-label="Navigation öffnen">
+        ☰
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">HOME</a></li>
+        <li><a href="#services" class="nav-link">UNSERE LEISTUNGEN</a></li>
+        <li><a href="#about" class="nav-link">ÜBER HARWIS</a></li>
+        <li><a href="#testimonial" class="nav-link">KUNDENSTIMMEN</a></li>
+        <li><a href="#gallery" class="nav-link">PROJEKTGALERIE</a></li>
+        <li><a href="#contact" class="nav-link">KONTAKT</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- TESTIMONIAL -->
-<section id="testimonial" class="testimonial">
-  <div class="container">
-    <p class="testimonial-quote">"Harwis Dienstleistungsservice hat uns mit seiner hervorragenden Qualität und der außergewöhnlichen Kundenfreundlichkeit restlos überzeugt. Ein wahrhaft professioneller Partner!"</p>
-    <p class="testimonial-author">Ein zufriedener Kunde aus Echzell</p>
-  </div>
-</section>
+  <!-- ===================================
+       HERO SECTION
+       =================================== -->
+  <section id="home" class="hero">
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600" 
+         alt="Hausmeisterservice" 
+         class="hero-bg">
+    
+    <div class="hero-content">
+      <h1 class="hero-title">Ihr Partner für Qualität und Service – Harwis Dienstleistungsservice</h1>
+      <p class="hero-text">
+        Willkommen bei Harwis Dienstleistungsservice in Echzell! Wir sind Ihr erfahrener Partner für umfassende 
+        Hausmeisterdienste. Qualität, Kundenfreundlichkeit und zuverlässige Lösungen stehen bei uns an erster 
+        Stelle, damit Sie sich rundum wohlfühlen können. Entdecken Sie, wie wir Ihnen den Alltag erleichtern.
+      </p>
+      <a href="#services" class="btn">Los geht's!</a>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="contact-wrapper">
-    
-    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000" alt="Kontakt" class="contact-image">
-    
-    <div class="contact-info">
-      <h2 class="contact-title">Kontaktieren sie uns</h2>
+  <!-- ===================================
+       SERVICES SECTION
+       =================================== -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Unsere umfassenden Dienstleistungen für Sie</h2>
       
-      <div class="contact-details">
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--gray);">
+        Von der Gartenpflege im Sommer bis zum Winterdienst bei Schnee – wir bieten maßgeschneiderte Lösungen, 
+        die genau auf Ihre Bedürfnisse abgestimmt sind. Effektiv, praktisch und stets mit dem Fokus auf Ihre Zufriedenheit.
+      </p>
+
+      <div class="services-grid">
         
-        <div class="contact-item">
-          <span class="contact-label">Adresse</span>
-          <div class="contact-value">[[street_address]]<br>61206 Echzell</div>
-        </div>
-
-        <div class="contact-item">
-          <span class="contact-label">Öffnungszeiten</span>
-          <div class="contact-value">
-            Mo - Fr: 9 - 17 Uhr<br>
-            Samstag: 10:00 - 15:00 Uhr<br>
-            Sonntag: geschlossen
+        <!-- Winterdienst -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1547530586-f6c0780b6372?auto=format&fit=crop&w=800" 
+               alt="Winterdienst" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Winterdienst</h3>
+            <p class="service-text">
+              In den kalten Monaten sorgen wir zuverlässig für schneefreie Wege und sichere Zufahrten. 
+              Verlassen Sie sich auf unseren schnellen und gründlichen Winterdienst.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('winterModal')">Mehr erfahren</button>
           </div>
         </div>
 
-        <div class="contact-item">
-          <span class="contact-label">Kontakt</span>
-          <div class="contact-value">
-            <a href="tel:[[phone_number]]">[[phone_number]]</a><br>
-            <a href="mailto:[[email]]">[[email]]</a>
+        <!-- Gartenpflege -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800" 
+               alt="Gartenpflege" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Gartenpflege</h3>
+            <p class="service-text">
+              Ob Rasenmähen, Hecken schneiden oder allgemeine Gartenarbeit – wir halten Ihre Grünflächen das 
+              ganze Jahr über in Schuss. Genießen Sie Ihren perfekten Garten.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('gardenModal')">Mehr erfahren</button>
           </div>
         </div>
 
-        <div class="contact-item">
-          <span class="social-label">Soziale Netzwerke</span>
+        <!-- Treppenhausreinigung -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800" 
+               alt="Treppenhausreinigung" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Treppenhausreinigung</h3>
+            <p class="service-text">
+              Ein sauberes Treppenhaus hinterlässt einen bleibenden ersten Eindruck. Wir kümmern uns um die 
+              regelmäßige und gründliche Reinigung Ihres Eingangsbereichs.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('stairsModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Entrümpelung -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" 
+               alt="Entrümpelung" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Entrümpelungen & mehr</h3>
+            <p class="service-text">
+              Von der Entrümpelung bis zu sonstigen Arbeiten – wir sind flexibel und packen an, wo immer Hilfe 
+              benötigt wird. Sprechen Sie uns einfach an für eine individuelle Lösung.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('cleanModal')">Mehr erfahren</button>
+          </div>
         </div>
 
       </div>
     </div>
-    
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-content">
-    <p>© 2026 Harwis Dienstleistungsservice</p>
-    <p style="margin-top: 0.5rem;">Mit Unterstützung von <a href="#">Webador</a></p>
-  </div>
-</footer>
+  <!-- ===================================
+       TESTIMONIAL SECTION
+       =================================== -->
+  <section id="testimonial" class="testimonial">
+    <div class="container">
+      <p class="testimonial-quote">
+        "Harwis Dienstleistungsservice hat uns mit seiner hervorragenden Qualität und der außergewöhnlichen 
+        Kundenfreundlichkeit restlos überzeugt. Ein wahrhaft professioneller Partner!"
+      </p>
+      <p class="testimonial-author">Ein zufriedener Kunde aus Echzell</p>
+    </div>
+  </section>
 
-<!-- MODALS -->
-<div id="winterModal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('winterModal')">&times;</button>
-    <h3 class="modal-title">Winterdienst</h3>
-    <p class="modal-text">Unser professioneller Winterdienst sorgt dafür, dass Ihre Wege und Zufahrten auch bei Schnee und Eis sicher begehbar bleiben. Wir räumen zuverlässig Schnee, streuen bei Glätte und sind bei Bedarf auch im Notfall für Sie da. Verlassen Sie sich auf unsere Erfahrung und schnelle Reaktionszeit – für Ihre Sicherheit in der kalten Jahreszeit.</p>
-  </div>
-</div>
+  <!-- ===================================
+       CONTACT SECTION
+       =================================== -->
+  <section id="contact" class="contact">
+    <div class="contact-wrapper">
+      
+      <!-- Contact Image -->
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000" 
+           alt="Kontakt" 
+           class="contact-image">
+      
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h2 class="contact-title">Kontaktieren Sie uns</h2>
+        
+        <div class="contact-details">
+          
+          <div class="contact-item">
+            <span class="contact-label">Adresse</span>
+            <div class="contact-value">
+              [[street_address]]<br>
+              61206 Echzell
+            </div>
+          </div>
 
-<div id="gardenModal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('gardenModal')">&times;</button>
-    <h3 class="modal-title">Gartenpflege</h3>
-    <p class="modal-text">Ein gepflegter Garten ist Ihre grüne Oase. Wir übernehmen für Sie das Rasenmähen, Heckenschneiden, die Beetpflege und alle weiteren Arbeiten rund um Ihren Garten. Ob regelmäßige Pflege oder saisonale Arbeiten – wir sorgen dafür, dass Ihr Außenbereich das ganze Jahr über einladend und schön aussieht.</p>
-  </div>
-</div>
+          <div class="contact-item">
+            <span class="contact-label">Öffnungszeiten</span>
+            <div class="contact-value">
+              Mo - Fr: 9 - 17 Uhr<br>
+              Samstag: 10:00 - 15:00 Uhr<br>
+              Sonntag: geschlossen
+            </div>
+          </div>
 
-<div id="stairsModal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('stairsModal')">&times;</button>
-    <h3 class="modal-title">Treppenhausreinigung</h3>
-    <p class="modal-text">Der erste Eindruck zählt – ein sauberes Treppenhaus vermittelt Wertschätzung und Professionalität. Wir kümmern uns um die regelmäßige und gründliche Reinigung Ihrer Treppenhäuser und Eingangsbereiche. Von der Bodenreinigung über das Wischen der Handläufe bis zur Pflege der Fenster – wir sorgen für Sauberkeit und Ordnung.</p>
-  </div>
-</div>
+          <div class="contact-item">
+            <span class="contact-label">Kontakt</span>
+            <div class="contact-value">
+              <a href="tel:[[phone_number]]">[[phone_number]]</a><br>
+              <a href="mailto:[[email]]">[[email]]</a>
+            </div>
+          </div>
 
-<div id="cleanModal" class="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('cleanModal')">&times;</button>
-    <h3 class="modal-title">Entrümpelungen & mehr</h3>
-    <p class="modal-text">Manchmal braucht es einfach einen Neuanfang. Wir helfen Ihnen bei der Entrümpelung von Wohnungen, Kellern, Garagen oder Dachböden – schnell, zuverlässig und stressfrei. Darüber hinaus bieten wir flexible Lösungen für weitere Dienstleistungen. Sprechen Sie uns einfach an, wir finden gemeinsam die passende Lösung für Ihr Anliegen.</p>
-  </div>
-</div>
+          <div class="contact-item">
+            <span class="social-label">Soziale Netzwerke</span>
+          </div>
 
-<script>
-// Mobile Navigation Toggle
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+        </div>
+      </div>
+      
+    </div>
+  </section>
 
-navToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-});
+  <!-- ===================================
+       FOOTER
+       =================================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Harwis Dienstleistungsservice</p>
+      <p style="margin-top: 0.5rem;">Mit Unterstützung von <a href="#">Webador</a></p>
+    </div>
+  </footer>
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-  });
-});
-
-// Update active nav link on scroll
-window.addEventListener('scroll', () => {
-  let current = '';
-  const sections = document.querySelectorAll('section');
+  <!-- ===================================
+       MODALS
+       =================================== -->
   
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= (sectionTop - 200)) {
-      current = section.getAttribute('id');
-    }
-  });
+  <!-- Winterdienst Modal -->
+  <div id="winterModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('winterModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Winterdienst</h3>
+      <p class="modal-text">
+        Unser professioneller Winterdienst sorgt dafür, dass Ihre Wege und Zufahrten auch bei Schnee und Eis 
+        sicher begehbar bleiben. Wir räumen zuverlässig Schnee, streuen bei Glätte und sind bei Bedarf auch im 
+        Notfall für Sie da. Verlassen Sie sich auf unsere Erfahrung und schnelle Reaktionszeit – für Ihre 
+        Sicherheit in der kalten Jahreszeit.
+      </p>
+    </div>
+  </div>
 
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').includes(current)) {
-      link.classList.add('active');
-    }
-  });
-});
+  <!-- Gartenpflege Modal -->
+  <div id="gardenModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('gardenModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Gartenpflege</h3>
+      <p class="modal-text">
+        Ein gepflegter Garten ist Ihre grüne Oase. Wir übernehmen für Sie das Rasenmähen, Heckenschneiden, die 
+        Beetpflege und alle weiteren Arbeiten rund um Ihren Garten. Ob regelmäßige Pflege oder saisonale 
+        Arbeiten – wir sorgen dafür, dass Ihr Außenbereich das ganze Jahr über einladend und schön aussieht.
+      </p>
+    </div>
+  </div>
 
-// Modal Functions
-function openModal(modalId) {
-  document.getElementById(modalId).style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
+  <!-- Treppenhausreinigung Modal -->
+  <div id="stairsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('stairsModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Treppenhausreinigung</h3>
+      <p class="modal-text">
+        Der erste Eindruck zählt – ein sauberes Treppenhaus vermittelt Wertschätzung und Professionalität. Wir 
+        kümmern uns um die regelmäßige und gründliche Reinigung Ihrer Treppenhäuser und Eingangsbereiche. Von 
+        der Bodenreinigung über das Wischen der Handläufe bis zur Pflege der Fenster – wir sorgen für Sauberkeit 
+        und Ordnung.
+      </p>
+    </div>
+  </div>
 
-function closeModal(modalId) {
-  document.getElementById(modalId).style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
+  <!-- Entrümpelung Modal -->
+  <div id="cleanModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('cleanModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Entrümpelungen & mehr</h3>
+      <p class="modal-text">
+        Manchmal braucht es einfach einen Neuanfang. Wir helfen Ihnen bei der Entrümpelung von Wohnungen, 
+        Kellern, Garagen oder Dachböden – schnell, zuverlässig und stressfrei. Darüber hinaus bieten wir 
+        flexible Lösungen für weitere Dienstleistungen. Sprechen Sie uns einfach an, wir finden gemeinsam die 
+        passende Lösung für Ihr Anliegen.
+      </p>
+    </div>
+  </div>
 
-// Close modal when clicking outside
-window.addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal')) {
-    e.target.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-});
-</script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
