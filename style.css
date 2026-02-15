@@ -437,24 +437,40 @@ section {
   }
 
   .contact-image {
-    min-height: 400px;
+    min-height: 350px;
+    order: -1;
+  }
+
+  .section-title {
+    font-size: 2rem;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   /* Navigation */
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-brand {
+    font-size: 0.85rem;
+    padding: 1rem 0;
+  }
+
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 60px;
+    top: 56px;
     flex-direction: column;
     background-color: var(--dark);
     width: 100%;
     text-align: left;
-    transition: 0.3s;
+    transition: left 0.3s ease;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
     gap: 0;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -462,48 +478,204 @@ section {
   }
 
   .nav-link {
-    padding: 1rem 2rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav-toggle {
     display: block;
+    padding: 0.7rem;
+    font-size: 1.8rem;
   }
 
   /* Hero */
   .hero {
-    height: 500px;
+    height: auto;
+    min-height: 450px;
+    padding: 3rem 0;
+  }
+
+  .hero-content {
+    padding: 2rem 1.5rem;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
   }
 
   .hero-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
-  /* Services */
+  .btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Sections */
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .services {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Services Grid */
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    margin-bottom: 0;
   }
 
   .service-image {
-    height: 250px;
+    height: 220px;
+  }
+
+  .service-content {
+    padding: 1.5rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .btn-secondary {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
   }
 
   /* Testimonial */
+  .testimonial {
+    padding: 3rem 1.5rem;
+  }
+
   .testimonial-quote {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.9rem;
   }
 
   /* Contact */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    min-height: 250px;
+    max-height: 300px;
+  }
+
   .contact-info {
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-item {
+    margin-bottom: 1.3rem;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-content p {
+    margin-bottom: 0.3rem;
   }
 
   /* Modal */
   .modal-content {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+  }
+
+  .modal-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .modal-close {
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 0.75rem;
+    max-width: 70%;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .service-content {
+    padding: 1.2rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1.1rem;
+  }
+
+  .contact-info {
+    padding: 2rem 1.2rem;
   }
 }
