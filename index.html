@@ -39,7 +39,7 @@
        HERO SECTION
        =================================== -->
   <section id="home" class="hero">
-    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600" 
+    <img src="images/harwis_logo.png" 
          alt="Hausmeisterservice" 
          class="hero-bg">
     
@@ -68,9 +68,99 @@
 
       <div class="services-grid">
         
+        <!-- Hausmeisterservice -->
+        <div class="service-card">
+          <img src="images/" 
+               alt="Hausmeisterservice" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Hausmeisterservice</h3>
+            <p class="service-text">
+              Umfassende Betreuung Ihrer Immobilie. Von der regelmäßigen Wartung bis zu kleineren Reparaturen – 
+              wir kümmern uns um alle anfallenden Hausmeistertätigkeiten.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('hausmeisterModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Treppenhausreinigung/Grundreinigung -->
+        <div class="service-card">
+          <img src="images/Treppenhausreinigung_Bild.jpeg" 
+               alt="Treppenhausreinigung" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Treppenhausreinigung / Grundreinigung</h3>
+            <p class="service-text">
+              Ein sauberes Treppenhaus hinterlässt einen bleibenden ersten Eindruck. Wir kümmern uns um die 
+              regelmäßige Reinigung sowie gründliche Grundreinigungen.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('stairsModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Mülltonnenbereitstellung -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800" 
+               alt="Mülltonnenbereitstellung" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Mülltonnenbereitstellung</h3>
+            <p class="service-text">
+              Zuverlässige Bereitstellung und Rückholung Ihrer Mülltonnen. Wir sorgen dafür, dass Ihre Abfallentsorgung 
+              reibungslos funktioniert – pünktlich und gewissenhaft.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('muellModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Garten- und Grünpflege -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800" 
+               alt="Garten- und Grünpflege" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Garten- und Grünpflege</h3>
+            <p class="service-text">
+              Ob Rasenmähen, Heckenschneiden oder allgemeine Gartenarbeit – wir halten Ihre Grünflächen das 
+              ganze Jahr über gepflegt und einladend.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('gartenModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Baustellenendreinigung -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800" 
+               alt="Baustellenendreinigung" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Baustellenendreinigung</h3>
+            <p class="service-text">
+              Nach Abschluss der Bauarbeiten sorgen wir für eine gründliche Endreinigung. Ihre Baustelle wird 
+              besenrein und bezugsfertig übergeben.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('baustelleModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Renovierungsarbeiten -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800" 
+               alt="Renovierungsarbeiten" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Renovierungsarbeiten</h3>
+            <p class="service-text">
+              Von Malerarbeiten bis zu kleineren Umbauten – wir unterstützen Sie bei Ihren Renovierungsprojekten 
+              mit handwerklichem Geschick und Erfahrung.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('renovierungModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
         <!-- Winterdienst -->
         <div class="service-card">
-          <img src="https://www.cleanoptimal.de/wp-content/uploads/sites/4756/2022/08/winterdienst_clean_optimal_gmbh.jpg.webp" 
+          <img src="https://images.unsplash.com/photo-1547530586-f6c0780b6372?auto=format&fit=crop&w=800" 
                alt="Winterdienst" 
                class="service-image">
           <div class="service-content">
@@ -83,48 +173,33 @@
           </div>
         </div>
 
-        <!-- Gartenpflege -->
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800" 
-               alt="Gartenpflege" 
-               class="service-image">
-          <div class="service-content">
-            <h3 class="service-title">Gartenpflege</h3>
-            <p class="service-text">
-              Ob Rasenmähen, Hecken schneiden oder allgemeine Gartenarbeit – wir halten Ihre Grünflächen das 
-              ganze Jahr über in Schuss. Genießen Sie Ihren perfekten Garten.
-            </p>
-            <button class="btn btn-secondary" onclick="openModal('gardenModal')">Mehr erfahren</button>
-          </div>
-        </div>
-
-        <!-- Treppenhausreinigung -->
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800" 
-               alt="Treppenhausreinigung" 
-               class="service-image">
-          <div class="service-content">
-            <h3 class="service-title">Treppenhausreinigung</h3>
-            <p class="service-text">
-              Ein sauberes Treppenhaus hinterlässt einen bleibenden ersten Eindruck. Wir kümmern uns um die 
-              regelmäßige und gründliche Reinigung Ihres Eingangsbereichs.
-            </p>
-            <button class="btn btn-secondary" onclick="openModal('stairsModal')">Mehr erfahren</button>
-          </div>
-        </div>
-
         <!-- Entrümpelung -->
         <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" 
+          <img src="images/Entrümpelung_Bild_1.jpg" 
                alt="Entrümpelung" 
                class="service-image">
           <div class="service-content">
-            <h3 class="service-title">Entrümpelungen & mehr</h3>
+            <h3 class="service-title">Entrümpelung</h3>
             <p class="service-text">
-              Von der Entrümpelung bis zu sonstigen Arbeiten – wir sind flexibel und packen an, wo immer Hilfe 
-              benötigt wird. Sprechen Sie uns einfach an für eine individuelle Lösung.
+              Wir helfen Ihnen bei der Entrümpelung von Wohnungen, Kellern, Garagen oder Dachböden – 
+              schnell, zuverlässig und stressfrei.
             </p>
-            <button class="btn btn-secondary" onclick="openModal('cleanModal')">Mehr erfahren</button>
+            <button class="btn btn-secondary" onclick="openModal('entruempelungModal')">Mehr erfahren</button>
+          </div>
+        </div>
+
+        <!-- Weitere Arbeiten -->
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=800" 
+               alt="Weitere Arbeiten" 
+               class="service-image">
+          <div class="service-content">
+            <h3 class="service-title">Weitere Arbeiten auf Anfrage</h3>
+            <p class="service-text">
+              Sie haben einen speziellen Auftrag? Wir sind flexibel und packen an, wo immer Hilfe benötigt wird. 
+              Sprechen Sie uns einfach an für eine individuelle Lösung.
+            </p>
+            <button class="btn btn-secondary" onclick="openModal('weitereModal')">Mehr erfahren</button>
           </div>
         </div>
 
@@ -165,25 +240,36 @@
           <div class="contact-item">
             <span class="contact-label">Adresse</span>
             <div class="contact-value">
-              Schulstraße 6<br>
-              61209 Echzell
+              Schulstraße 6 <br>
+              61206 Echzell
             </div>
           </div>
 
           <div class="contact-item">
-            <span class="contact-label">Dienstzeiten</span>
+            <span class="contact-label">Öffnungszeiten</span>
             <div class="contact-value">
-              Mo - Fr: 9 - 17 Uhr
+              Mo - Fr: 9 - 17 Uhr<br>
+              Samstag: 10:00 - 15:00 Uhr<br>
+              Sonntag: geschlossen
             </div>
           </div>
 
           <div class="contact-item">
             <span class="contact-label">Kontakt</span>
             <div class="contact-value">
-              <a href="tel:">+491751020230</a><br>
-              <a href="mailto:Harwis-Dienstleistungsservice@gmx.de">Harwis-Dienstleistungsservice@gmx.de</a>
+              <a href="tel:+491751020230">+49 175 1020230</a><br>
+              <a href="mailto:Harwis-Dienstleistungsservice@gmx.de">hms-wisdorff@gmx.de</a>
             </div>
           </div>
+
+          <div class="contact-item">
+            <span class="social-label">Soziale Netzwerke</span>
+            <div class="contact-value">
+              <a href="https://www.instagram.com/harwis_dienstleistungsservice/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+              </a>
+          </div>
+
         </div>
       </div>
       
@@ -203,6 +289,85 @@
        MODALS
        =================================== -->
   
+  <!-- Hausmeisterservice Modal -->
+  <div id="hausmeisterModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('hausmeisterModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Hausmeisterservice</h3>
+      <p class="modal-text">
+        Unser umfassender Hausmeisterservice sorgt dafür, dass Ihre Immobilie bestens betreut wird. Von der 
+        regelmäßigen Kontrolle und Wartung über Kleinreparaturen bis hin zur Koordination von Handwerkern – 
+        wir sind Ihr verlässlicher Ansprechpartner vor Ort. Damit Sie sich um nichts kümmern müssen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Treppenhausreinigung Modal -->
+  <div id="stairsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('stairsModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Treppenhausreinigung / Grundreinigung</h3>
+      <p class="modal-text">
+        Der erste Eindruck zählt – ein sauberes Treppenhaus vermittelt Wertschätzung und Professionalität. Wir 
+        kümmern uns um die regelmäßige Reinigung Ihrer Treppenhäuser und Eingangsbereiche. Von der Bodenreinigung 
+        über das Wischen der Handläufe bis zur Pflege der Fenster. Auf Wunsch führen wir auch gründliche 
+        Grundreinigungen durch.
+      </p>
+    </div>
+  </div>
+
+  <!-- Mülltonnenbereitstellung Modal -->
+  <div id="muellModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('muellModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Mülltonnenbereitstellung</h3>
+      <p class="modal-text">
+        Wir übernehmen die zuverlässige Bereitstellung und Rückholung Ihrer Mülltonnen an den Abfuhrtagen. 
+        Pünktlich, gewissenhaft und ohne dass Sie sich darum kümmern müssen. So bleibt Ihr Außenbereich 
+        ordentlich und die Abfallentsorgung funktioniert reibungslos.
+      </p>
+    </div>
+  </div>
+
+  <!-- Garten- und Grünpflege Modal -->
+  <div id="gartenModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('gartenModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Garten- und Grünpflege</h3>
+      <p class="modal-text">
+        Ein gepflegter Garten ist Ihre grüne Oase. Wir übernehmen für Sie das Rasenmähen, Heckenschneiden, die 
+        Beetpflege und alle weiteren Arbeiten rund um Ihren Garten. Ob regelmäßige Pflege oder saisonale 
+        Arbeiten – wir sorgen dafür, dass Ihr Außenbereich das ganze Jahr über einladend und schön aussieht.
+      </p>
+    </div>
+  </div>
+
+  <!-- Baustellenendreinigung Modal -->
+  <div id="baustelleModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('baustelleModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Baustellenendreinigung</h3>
+      <p class="modal-text">
+        Nach Abschluss Ihrer Bauarbeiten sorgen wir für eine professionelle Endreinigung. Wir entfernen 
+        Baustaub, Farbreste und alle anderen Verschmutzungen, sodass Ihre Baustelle besenrein und bezugsfertig 
+        übergeben werden kann. Gründlich, zuverlässig und termingerecht.
+      </p>
+    </div>
+  </div>
+
+  <!-- Renovierungsarbeiten Modal -->
+  <div id="renovierungModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('renovierungModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Renovierungsarbeiten</h3>
+      <p class="modal-text">
+        Von Malerarbeiten über Bodenverlegung bis zu kleineren Umbauten – wir unterstützen Sie bei Ihren 
+        Renovierungsprojekten mit handwerklichem Geschick und jahrelanger Erfahrung. Wir arbeiten sauber, 
+        präzise und termintreu, damit Ihre Räume bald in neuem Glanz erstrahlen.
+      </p>
+    </div>
+  </div>
+
   <!-- Winterdienst Modal -->
   <div id="winterModal" class="modal">
     <div class="modal-content">
@@ -217,43 +382,29 @@
     </div>
   </div>
 
-  <!-- Gartenpflege Modal -->
-  <div id="gardenModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('gardenModal')" aria-label="Schließen">&times;</button>
-      <h3 class="modal-title">Gartenpflege</h3>
-      <p class="modal-text">
-        Ein gepflegter Garten ist Ihre grüne Oase. Wir übernehmen für Sie das Rasenmähen, Heckenschneiden, die 
-        Beetpflege und alle weiteren Arbeiten rund um Ihren Garten. Ob regelmäßige Pflege oder saisonale 
-        Arbeiten – wir sorgen dafür, dass Ihr Außenbereich das ganze Jahr über einladend und schön aussieht.
-      </p>
-    </div>
-  </div>
-
-  <!-- Treppenhausreinigung Modal -->
-  <div id="stairsModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('stairsModal')" aria-label="Schließen">&times;</button>
-      <h3 class="modal-title">Treppenhausreinigung</h3>
-      <p class="modal-text">
-        Der erste Eindruck zählt – ein sauberes Treppenhaus vermittelt Wertschätzung und Professionalität. Wir 
-        kümmern uns um die regelmäßige und gründliche Reinigung Ihrer Treppenhäuser und Eingangsbereiche. Von 
-        der Bodenreinigung über das Wischen der Handläufe bis zur Pflege der Fenster – wir sorgen für Sauberkeit 
-        und Ordnung.
-      </p>
-    </div>
-  </div>
-
   <!-- Entrümpelung Modal -->
-  <div id="cleanModal" class="modal">
+  <div id="entruempelungModal" class="modal">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('cleanModal')" aria-label="Schließen">&times;</button>
-      <h3 class="modal-title">Entrümpelungen & mehr</h3>
+      <button class="modal-close" onclick="closeModal('entruempelungModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Entrümpelung</h3>
       <p class="modal-text">
         Manchmal braucht es einfach einen Neuanfang. Wir helfen Ihnen bei der Entrümpelung von Wohnungen, 
-        Kellern, Garagen oder Dachböden – schnell, zuverlässig und stressfrei. Darüber hinaus bieten wir 
-        flexible Lösungen für weitere Dienstleistungen. Sprechen Sie uns einfach an, wir finden gemeinsam die 
-        passende Lösung für Ihr Anliegen.
+        Kellern, Garagen oder Dachböden – schnell, zuverlässig und stressfrei. Wir entsorgen fachgerecht und 
+        hinterlassen aufgeräumte Räume. Sprechen Sie uns an für ein unverbindliches Angebot.
+      </p>
+    </div>
+  </div>
+
+  <!-- Weitere Arbeiten Modal -->
+  <div id="weitereModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('weitereModal')" aria-label="Schließen">&times;</button>
+      <h3 class="modal-title">Weitere Arbeiten auf Anfrage</h3>
+      <p class="modal-text">
+        Sie haben einen speziellen Auftrag, der nicht in unsere Standardkategorien passt? Kein Problem! Wir 
+        sind flexibel und packen an, wo immer Hilfe benötigt wird. Ob Umzugsunterstützung, Kleinreparaturen 
+        oder andere Dienstleistungen – sprechen Sie uns einfach an. Gemeinsam finden wir die passende Lösung 
+        für Ihr Anliegen.
       </p>
     </div>
   </div>
