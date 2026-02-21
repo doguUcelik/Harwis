@@ -562,6 +562,12 @@ section {
     height: 220px;
   }
 
+  .service-image-square {
+  height: 280px !important;
+  object-fit: contain !important;
+  background: #fafafa;
+}
+
   .service-content {
     padding: 1.5rem;
   }
